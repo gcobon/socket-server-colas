@@ -51,13 +51,16 @@ export default class Server {
       socket.connectUser(cliente);
 
       //config user
-      socket.configUser(cliente);
+      socket.configUser(cliente,  this.io);
       
       //mensajes
       socket.message(cliente, this.io);
 
+      //obtener usuarios activos
+      socket.getUsers(cliente, this.io);
+
       //desconectar
-      socket.disconnect(cliente);
+      socket.disconnect(cliente, this.io);
 
     });
   }

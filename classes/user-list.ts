@@ -30,7 +30,7 @@ export class UserList{
 
     // obtener toda la lista de usuarios
     public getList(){
-        return this.list;
+        return this.list.filter(user => user.name != 'sin-nombre');
     }
 
     //obtener solo un usuario
