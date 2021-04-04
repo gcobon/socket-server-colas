@@ -5,16 +5,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const router_1 = __importDefault(require("./routes/router"));
 const server_1 = __importDefault(require("./classes/server"));
-const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
+const express_1 = __importDefault(require("express"));
 const server = new server_1.default();
 //server
 server.start(() => {
     console.log(`Servidor corriendo en el puerto ${server.port}`);
 });
 //middlewares
-server.app.use(body_parser_1.default.urlencoded({ extended: true }));
-server.app.use(body_parser_1.default.json());
+// server.app.use(bodyParser.urlencoded({extended: true}));
+// server.app.use(bodyParser.json());
+server.app.use(express_1.default.json());
+server.app.use(express_1.default.urlencoded({ extended: true }));
 //cors
 server.app.use(cors_1.default({ origin: true, credentials: true }));
 //routes
