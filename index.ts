@@ -1,7 +1,7 @@
 import router from './routes/router';
 import Server from "./classes/server";
-import bodyParser from 'body-parser';
 import cors from 'cors';
+import express from 'express';
 
 const server = new Server();
 
@@ -11,8 +11,10 @@ server.start(()=>{
 });
 
 //middlewares
-server.app.use(bodyParser.urlencoded({extended: true}));
-server.app.use(bodyParser.json());
+// server.app.use(bodyParser.urlencoded({extended: true}));
+// server.app.use(bodyParser.json());
+ server.app.use(express.json());
+ server.app.use(express.urlencoded({extended: true}));
 
 //cors
 server.app.use(cors({origin: true, credentials: true}));
