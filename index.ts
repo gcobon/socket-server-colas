@@ -20,3 +20,4 @@ server.start(()=>{
 server.app.use(cors({origin: true, credentials: true}));
 //routes
 server.app.use('/', router);
+

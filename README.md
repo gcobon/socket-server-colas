@@ -17,4 +17,3 @@ Run the comand `nodemon dist/` to run the server in the port 3000.
 ## Ready
 
 You can use the endpoints `http://localhost:3000/tickets` or `http://localhost:3000/tickets-attended` to see the tickets in queue o the attended tickets.
- 
