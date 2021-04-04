@@ -11,8 +11,6 @@ server.start(()=>{
 });
 
 //middlewares
-// server.app.use(bodyParser.urlencoded({extended: true}));
-// server.app.use(bodyParser.json());
  server.app.use(express.json());
  server.app.use(express.urlencoded({extended: true}));
 

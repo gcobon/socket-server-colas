@@ -13,8 +13,6 @@ server.start(() => {
     console.log(`Servidor corriendo en el puerto ${server.port}`);
 });
 //middlewares
-// server.app.use(bodyParser.urlencoded({extended: true}));
-// server.app.use(bodyParser.json());
 server.app.use(express_1.default.json());
 server.app.use(express_1.default.urlencoded({ extended: true }));
 //cors
